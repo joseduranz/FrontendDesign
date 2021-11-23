@@ -1,0 +1,68 @@
+.sesion5{
+    background: linear-gradient(to bottom, rgb(39, 39, 39),rgba(80, 80, 80, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    *padding-bottom: 90px;
+    margin-bottom: 30vh;
+}
+.conS5{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.s5-img1 img{
+    position: absolute;
+    top: 450px;
+    *background-color: rgb(143, 36, 36);
+    width: 300px;
+    *margin-left: 190%;
+    left: 55%;
+}
+.s5-text {
+    *background-color: thistle;
+    position: relative;
+    font-size: 16px;
+    top: -100px;
+    width: 550px;
+    color: rgb(156, 156, 156);
+}
+.s5-text h1{
+    position: relative;
+    font-size: 66px;
+    margin-bottom: 25px;
+}
+.s5-text h1 span{
+    position: absolute;
+    color: rgb(255, 38, 0);
+    top: 45px;
+    left: 70px;
+    font-size: 40px;
+    *margin-bottom: 25px;
+}
+.map{
+    position: relative;
+    margin: 3rem;
+    margin-bottom: -20%;
+    height: 340px;
+    width: 500px;
+    padding:1rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.s5-img2 img{
+    position: absolute;
+    top: 280px;
+    *background-color: rosybrown;
+    width: 700px;
+    *margin-left: 30%;
+    left: 15%;
+}

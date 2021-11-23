@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================ICONOS REMIX=============================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--==========================================FONTAWESOME==================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- =========================================FONTS=============================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Bebas+Neue&family=Play&display=swap"
+        rel="stylesheet">
+    <!--
+    font-family: 'Alata', sans-serif;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Play', sans-serif;
+    -->
+
+    <!--================================NECESARIO PARA CARRUSEL START===============================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <!--================================NECESARIO PARA CARRUSEL END===============================-->
+
+    <!--================================HOJAS DE ESTILOS SEPARADAS POR SECTION===============================-->
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/logoGrupo5.css">
+    <link rel="stylesheet" href="/css/sesion1.css">
+    <link rel="stylesheet" href="/css/sesion2.css">
+    <link rel="stylesheet" href="/css/sesion3.css">
+    <link rel="stylesheet" href="/css/sesion4.css">
+    <link rel="stylesheet" href="/css/sesion5.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!--=============ARCHIVO IMPORTANTE PARA QUE LAS IMAGENES HAGAN SWIPE=================-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- =========================================LIBRERIA REVELAR=============================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>//==AGREGAR SOLO SI QUIERE QUE SE REPITA
+        ScrollReveal({ reset: true });
+    </script>
+
+    <!-- =========================================TITULO DE LA PAGUINA=============================-->
+    <title>CAR CONCESIONARY</title>
+      <style>
+        :root {
+            --grisClaro: #cbcbcb;
+            --grisMedio: rgb(164, 164, 164);
+            --red: #ff0000;
+            --black: #171717;
+            --grisOscuro: #3f3f3f;
+            --border: .1rem solid rgba(0, , 0, .1);
+            --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            *font-family: 'Alata', sans-serif;
+        }
+
+        html {
+            *overflow-x: hidden;
+            *scroll-padding-top: 7rem;
+            scroll-behavior: smooth;
+        }
+
+        li {
+            list-style: none;
+            display: inline;
+        }
+
+        button {
+            border-style: none;
+            cursor: pointer;
+        }
+
+        input {
+            border-style: none;
+        }
+
+        body {
+            background-color: rgb(51, 51, 51);
+            *display: flex;
+            *align-content: center;
+            *flex-direction: column;
+        }
+
+        section {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        
+        /*================HEADER START=========================*/
+        .containerHeader {
+            width: 100vw;
+            height: 75px;
+            position: absolute;
+            *background: rgba(19, 19, 19, 0.747);
+            *backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+            padding: .5rem;
+            *top: -200px;
+        }
+
+        /* ================================*/
+        /* oculta la barra de scroll*/
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        /* forma del scroll*/
+        .barra_progreso {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 3px;
+            border-bottom: .5rem solid red;
+            border-radius: 10px;
+            background: rgb(253, 0, 0);
+            z-index: 9999;
+        }
+
+        /* ================================*/
+        .logoHeader {
+            width: 10rem;
+            padding: 2rem;
+            margin-left: 30px;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+
+        }
+
+        .navbar a {
+            font-size: 1rem;
+            margin-right: 3rem;
+            color: rgb(165, 165, 165);
+            *transition: .3s;
+        }
+
+        .navbar a:hover {
+            color: red;
+        }
+
+        .loginIcon {
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: rgb(189, 189, 189);
+            display: none;
+            cursor: pointer;
+        }
+
+        #menu-btn {
+            z-index: 2;
+            position: relative;
+            font-size: 1.5rem;
+            margin-left: 20px;
+            color: rgb(189, 189, 189);
+            cursor: pointer;
+            display: none;
+            transition: .3s;
+        }
+
+        .containerHamburgesa {
+            display: none;
+        }
+
+        /*=====MEDIA QUERIES======*/
+        @media (max-width: 991px) {
+
+            .logoHeader {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .loginIcon {
+                display: block;
+            }
+
+            .containerHamburgesa {
+                display: flex;
+                align-items: center;
+                width: 5.5%;
+            }
+
+            #menu-btn {
+                position: relative;
+                display: block;
+            }
+
+            /*SE CREAN EN UNIVERSAL.JS AL DAR CLICK EN LA HAMBURGESA*/
+            .fa-times {
+                transform: rotate(180deg);
+                transition: 3s ease-in-out;
+            }
+
+            /*=======================================================*/
+            .navbar {
+                z-index: 1;
+                width: 100%;
+                position: absolute;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: right;
+                top: 0px;
+                left: -110%;
+                background: rgba(20, 20, 20, 0.1);
+                backdrop-filter: blur(5px);
+                transition: 1.3s ease-in-out;
+            }
+
+            .navbar a {
+                margin: 5.5rem;
+                font-size: 3rem;
+            }
+
+            /*SE CREAN EN UNIVERSAL.JS AL DAR CLICK EN LA HAMBURGESA*/
+            .active1 {
+                left: -30%;
+
+            }
+
+        }
+
+        /*=====VENTANA LOGIN START======*/
+        .containerLogin {
+            position: fixed;
+            top: 0;
+            right: -105%;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(20, 20, 20, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            transition: 1.3s ease-in-out;
+
+        }
+
+        .containerLogin.active {
+            right: 0;
+        }
+
+        .formLogin {
+            position: absolute;
+            margin: 2rem;
+            text-align: center;
+            padding: 2rem;
+            width: 40rem;
+            border-radius: .5rem;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+            background: #fff;
+        }
+
+        .btnGyF {
+            *background: lightgreen;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-right: -40px;
+        }
+
+        input.btnIniciarSesion {
+            display: block;
+            width: 100%;
+            margin: .5rem 0;
+        }
+
+        .boxInput {
+            background-color: rgb(243, 243, 243);
+            margin: .7rem 0;
+            width: 100%;
+            font-size: 1.6rem;
+            color: black;
+            text-transform: none;
+            *border: var(--border);
+            padding: 1rem 1.2rem;
+            border-radius: .5rem;
+        }
+
+        .containerLogin form p {
+            padding: 1rem 0;
+            font-size: 1rem;
+            color: rgb(121, 121, 121);
+        }
+
+        .containerLogin form p a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .containerLogin form h3 {
+            padding-bottom: 1rem;
+            font-size: 2.5rem;
+            color: black;
+        }
+
+        #close-login-form {
+            position: absolute;
+            margin-top: -450px;
+            margin-left: 230px;
+            font-size: 2.5rem;
+            color: rgb(87, 87, 87);
+            cursor: pointer;
+        }
+
+        #close-login-form:hover {
+            font-size: 2.8rem;
+            background: rrgb(77, 77, 77);
+            color: rgb(255, 0, 0);
+        }
+
+        @media (max-width: 770px) {
+            #close-login-form {
+                margin-top: -410px;
+                right: -5%;
+            }
+        }
+
+        @media (max-width: 573px) {
+            .formLogin {
+                width: 80%;
+            }
+
+            #close-login-form {
+                top: 94%;
+                right: -22px;
+            }
+        }
+
+        @media (max-width: 308px) {
+            #close-login-form {
+                top: 71%;
+
+            }
+        }
+
+        /*=====VENTANA LOGIN END======*/
+        /*================HEADER END=========================*/
+        /***********************************************************/
+        /*===============SESION "0" STAR======================*/
+        .espacioHed{/*espacio que se le pone al header*/
+            background-color: var(--black);
+            position: relative;
+            width: 100vw;
+            height: 70px;
+        }
+
+        .sesion0 {
+            /*==== 1 ====*/
+            background: var(--black);
+           *clip-path: polygon(0 0, 100% 0%, 100% 100vh, 0% 100vh);
+            overflow: hidden;
+            *margin-bottom: 3rem;
+            height: 150vh;
+        }
+
+        .tituloEscoje {
+            position: absolute;
+            top: 18vw;
+            margin-left: 100px;
+            *color: var(--grisClaro);
+            font-size: 50px;
+            background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+            ;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            *padding: 0%;
+        }
+
+      /*  
+    .divisorsesion1{
+    background: linear-gradient(to top, #171717 70%, transparent);
+    background-color: blue;
+    position: absolute;
+    top: 260%;
+    width: 100%;
+    height: 20rem;
+    z-index: 333;
+    }*/
+        /*===============background start======================*/
+        .containerImg {
+            /*======2=======*/
+            *background-color: blue;
+            position: relative;
+            width: 100vw;
+            height: 150vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .imgPiso {
+            *background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 1500px;
+            background-position-y: 0;
+            transform: scaleY(1.4);
+            transform-origin: bottom;
+            z-index: 3;
+
+        }
+
+        .lamparas {
+            position: absolute;
+            width: 150vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .lamparas img {
+            *background-color: rgba(137, 43, 226, 0.274);
+            position: absolute;
+            width: 1500px;
+            top: -360px;
+        }
+
+        /*===============background end======================*/
+        /******************************************************************/
+        /*===============icono bajar páguina start======================*/
+        .cotenedor-icono {
+            *background-color: rgb(255, 0, 0);
+            position: absolute;
+            padding: 20px;
+            z-index: 10;
+            bottom: 0vh;
+            left: 48%;
+            font-size: 25px;
+            cursor: pointer;
+            animation: bajar-subir 1s ease infinite;
+            transition: .3s;
+        }
+
+        @keyframes bajar-subir {
+            0% {
+                transform: translateY(30px) scale(.8);
+            }
+
+            20% {
+                transform: translateY(0px) scale(1);
+            }
+
+            100% {
+                transform: translateY(30px) scale(.8);
+            }
+        }
+
+        .fa-chevron-down {
+            color: var(--grisClaro);
+        }
+
+        .cotenedor-icono:hover .fa-chevron-down {
+            color: rgb(255, 255, 255);
+        }
+
+        /*===============icono bajar páguina end======================*/
+        /******************************************************************/
+        /*===============logos  carros carrusel start======================*/
+
+        @keyframes loop {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-16.66vw * 6));
+            }
+        }
+
+        .contenedorLogos{
+            background-color: #171717;
+            width: 100%;
+            height: 30vh;
+            *margin-top: 28rem;
+            position: relative;
+        }
+        .sliderLogo {
+            *background-color: brown;
+            position: absolute;
+            top: 65%;
+            *height: 15px;
+            margin: auto;
+            overflow: hidden;
+            width: 100vw;
+        }
+
+        .sliderLogo .slideTrackLogo {
+            position: relative;
+            *background-color: chartreuse;
+            animation: loop 28s linear infinite;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 200vw;
+            z-index: 3;
+        }
+
+        .sliderLogo .slideLogos {
+            *background: rgb(99, 31, 31);
+            display: flex;
+            flex-direction: row;
+            *justify-content: space-between;
+            height: 25px;
+            width: calc(16.66vw * 12);
+        }
+
+        .slideLogos img {
+            opacity: .2;
+        }
+
+        /*===============logos  carros carrusel end======================*/
+        /******************************************************************/
+        /*===============slider vehiculos start======================*/
+
+        .sectionPrueba {
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            *background: rgb(231, 96, 0);
+            *padding: 30px;
+            width: 100vw;
+            *height: 150vh;
+        }
+
+        .carousel__contenedor {
+            *background-color: rgba(51, 71, 11, 0.384);
+            position: relative;
+            width: 100vw;
+            *height: 150vh;
+            *margin: 0 30px 0 30px;
+        }
+
+        .carousel__anterior2,
+        .carousel__siguiente2 {
+            
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: none;
+            top: calc(50% - 55px);
+            cursor: pointer;
+            line-height: 50px;
+            text-align: center;
+            background: none;
+            color: rgb(255, 217, 0);
+            opacity: 20%;
+        }
+
+        .carousel__anterior2:hover,
+        .carousel__siguiente2:hover {
+            opacity: 100%;
+        }
+
+        .carousel__anterior2 {
+            left: -30px;
+        }
+
+        .carousel__siguiente2 {
+            right: -30px;
+        }
+
+        .carousel__lista {
+            *overflow: hidden;
+        }
+
+        .carousel__elemento {
+            *background-color: blue;
+            width: 100vw;
+            height: 150vh;
+            position: relative;
+            text-align: center;
+        }
+
+        .s0imgCar {
+            *background-color: blueviolet;
+            position: absolute;
+            width: 410px;
+            left: calc(50% - 200px);
+            top: calc(50% - 125px);
+            z-index: -2;
+        }
+
+        .s0ContCar {
+            *position: absolute;
+            margin-top: 8rem;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .carousel__indicadores2 .slick-dots {
+            /*no implementado */
+            background-color: blueviolet;
+            color: black;
+            display: block;
+            width: 30px;
+            height: 4px;
+            opacity: .6;
+        }
+
+        .carousel__indicadores .glider-dot:hover {
+            opacity: .8;
+        }
+
+        .carousel__indicadores .glider-dot.active {
+            opacity: 1;
+        }
+
+        /*===============contenido del texto en vehiculos  end======================*/
+        /******************************************************************/
+        /*===============contenido del boton saber mas start=====================*/
+        .btnCarousel {
+            background-color: red;
+            padding: 1rem 2rem;
+            border-radius: 2px;
+            color: white;
+            font-size: 1rem;
+            position: absolute;
+            left: calc(50% - 65px);
+            top: calc(77% - 5px);
+            transition: .3s ease-in-out;
+        }
+
+        .btnCarousel:hover {
+            background-color: rgb(255, 255, 255);
+            color: var(--red);
+            transform: scale(1.1);
+        }
+
+        /*===============contenido del boton saber mas end=====================*/
+
+        @media (max-width: 991px) {}
+    </style>
+    
+</head>
+
+<body>
+    <div class="barra_progreso" id="barra-progreso"></div>
+     <!-- ==========================================LOGO GRUPO 5 START=============================-->
+    <section class="grupo5">
+        <img src="/img/grupo5.png" alt="">
+        <div class="integrantes">
+            <h5 class="integ1">PEPITO PEREZ</h5>
+            <h5 class="integ2">PEPITO PEREZ</h5>
+            <h5 class="integ3">PEPITO PEREZ</h5>
+            <h5 class="integ4">PEPITO PEREZ</h5>
+            <h5 class="integ5">PEPITO PEREZ</h5>
+        </div>
+        <p>&#169; app web creada por winterfell en el proceso mision tic 2022 a cargo de la profesora Diana Patricia Marin</p>
+        <a href=""><i class="fab fa-github"></i></a>
+    </section>
+     <!-- ==========================================LOGO GRUPO 5 END=============================-->
+    <!-- **********************************************************************************-->
+     <!-- ==========================================HEADER START=============================-->
+    <header class="containerHeader">
+        <div class="containerHamburgesa " id="menuOpen">
+            <i id="menu-btn" class="fas fa-bars"></i>
+        </div>
+        <a href=""><img class="logoHeader logo" loading="lazy" src="/img/fordLogoLr.png" alt="logo"></a>
+        <nav class="navbar">
+            <a href="#inicio"> Inicio</a>
+            <a href="#vehiculos"> Vehículos</a>
+            <a href="#pruebaManejo"> Prueba de Manjeo</a>
+            <a href="#servicio"> Servicios</a>
+            <a href="#contacto"> Contacto</a>
+            <a href="#mapaSitio"> Mapa del sitio</a>
+        </nav>
+        <div id="login-btn">
+            <button class="btnIniciarSesion btn" href="">Login</button>
+            <i class="far fa-user loginIcon"></i>
+        </div>
+    </header>
+    <!--login===============================-->
+    <section class="containerLogin">
+        <form action="" class="formLogin">
+            <h3>Login</h3>
+            <input type="email" placeholder="Email" class="boxInput">
+            <input type="password" placeholder="Contraseña" class="boxInput">
+            <p> ¿olvidaste tu contraseña? <a href="#"> click aquí</a> </p>
+            <input type="submit" value="login" class="btn btnIniciarSesion">
+            <p>o ingresar con</p>
+            <div class="btnGyF">
+                <a href="#" class="btn btnIniciarSesion"> google </a>
+                <a href="#" class="btn btnIniciarSesion"> facebook </a>
+            </div>
+            <p> ¿no tienes cuenta? <a href="#"> registrarse</a> </p>
+            <span id="close-login-form" class="ri-close-circle-fill"></span>
+        </form>
+    </section>
+    <!-- ==========================================HEADER END=============================-->
+    <!-- **********************************************************************************-->
+    <!-- ==========================================SECTION 0 START=============================-->
+    <div class="espacioHed"></div>
+    <section class="sesion0 client-area" id="inicio">
+        <!--2-->
+        <div class="containerImg container">
+            <!--======imagenes lamparas=========-->
+            <div class="lamparas">
+                <img class="lamp1" loading="lazy" src="/img/garaje2.png" alt="lamparas">
+                <img class="lamp2" loading="lazy" src="/img/garaje3.png" alt="lamparas">
+                <img class="lamp3" loading="lazy" src="/img/garaje4.png" alt="lamparas">
+                <img class="lamp4" loading="lazy" src="/img/garaje5.png" alt="lamparas">
+                <img class="lamp5" loading="lazy" src="/img/garaje6.png" alt="lamparas">
+                <img class="lamp6" loading="lazy" src="/img/garaje7.png" alt="lamparas">
+            </div>
+            <!--======imagenes piso=========-->
+            <img class="imgPiso" loading="lazy" src="/img/garaje1.png" alt="Garaje">
+            
+            <!--======contenedor de carros=========-->
+            <div class="sectionPrueba">
+                <div class="carousel">
+                    <div class="carousel__contenedor">
+                        <button aria-label="Anterior" class="carousel__anterior2"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <div class="carousel__lista">
+                            <div class="carousel__elemento">
+                                <button class="btnCarousel">SABER MAS</button>
+                                <img class="s0ContCar" src="/img/carros/car1cont.png" loading="lazy" alt="">
+                                <img class="s0imgCar" loading="lazy" src="img/carros/car1.png" alt="car1.1">
+                            </div>
+                            <div class="carousel__elemento">
+                                <button class="btnCarousel">SABER MAS</button>
+                                <img class="s0ContCar" src="/img/carros/car2cont.png" loading="lazy" alt="">
+                                <img class="s0imgCar" loading="lazy" src="img/carros/car2.png" alt="car1.1">
+                            </div>
+                            <div class="carousel__elemento">
+                                <button class="btnCarousel">SABER MAS</button>
+                                <h1 class="title tituloEscoje">Escoje El Tuyo</h1>
+                                <img class="s0ContCar" src="/img/carros/car3cont.png" loading="lazy" alt="">
+                                <img class="s0imgCar" loading="lazy" src="img/carros/car3.png" alt="car1.1">
+                            </div>
+                            <div class="carousel__elemento">
+                                <button class="btnCarousel">SABER MAS</button>
+                                <img class="s0ContCar" src="/img/carros/car4cont.png" loading="lazy" alt="">
+                                <img class="s0imgCar" loading="lazy" src="img/carros/car4.png" alt="car1.1">
+                            </div>
+                            <div class="carousel__elemento">
+                                <button class="btnCarousel">SABER MAS</button>
+                                <img class="s0ContCar" src="/img/carros/car5cont.png" loading="lazy" alt="">
+                                <img class="s0imgCar" loading="lazy" src="img/carros/car5.png" alt="car1.1">
+                            </div>
+                        </div>
+                        <button aria-label="Siguiente" class="carousel__siguiente2"><i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div role="tablist" class="carousel__indicadores2"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="divisorsesion1"></div>
+
+    <!--icono bajar a otra pestana===============================-->
+    <div class="cotenedor-icono">
+        <p><a href="#inicio" class="texto-blanco"><i class="fas fa-chevron-down"></i></a></p>
+    </div>
+
+<!-- ==========================================SECTION 0 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SECTION LOGOS CARRUSEL START============================-->
+<div class="contenedorLogos">
+    <div class="sliderLogo">
+    <div class="slideTrackLogo">
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/bmw-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/ford-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/honda-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/hyunday-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/kia-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mazda-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mercedez-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/jeep-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mitsubishi-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/renault-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/suzuki-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/toyota-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/bmw-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/ford-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/honda-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/hyunday-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/kia-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mazda-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mercedez-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/jeep-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/mitsubishi-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/renault-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/suzuki-logo.png" loading="lazy" alt="logos">
+        </div>
+        <div class="slideLogos">
+            <img src="/img/logos/blancos/toyota-logo.png" loading="lazy" alt="logos">
+        </div>
+
+    </div>
+
+    </div>
+</div>
+<!-- ==========================================SECTION LOGOS CARRUSEL END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SECTION 1 START=============================-->
+<section class="sesion1" id="vehiculos">
+    <h1 class="heading "> Vehículos <span>Disponibles</span></h1>
+    <div class="swiper sesion1-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="/img/car-1.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-2.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-3.png" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-4.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+    <div class="swiper sesion1-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="/img/car-5.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-6.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-7.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/img/car-8.png" loading="lazy" alt="">
+                <div class="content">
+                    <h3>Nuevo Modelo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">$55,000.</div>
+                    <a href="#" class="btn btnIniciarSesion">ver</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+</section>
+
+<!-- ==========================================SECTION 1 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SECTION 2 START=============================-->
+<section class="sesion2" id="pruebaManejo">
+    <div class="conS2">
+        <div class="s2-text">
+            <h1>Prueba<span>de Manejo</span></h1>
+            <p>VIVE LA EXPERIENCIA DE CONDUCIR EN NUESTRO CONCECIONARIO, <br> VEN YA Y AGENDA TU CITA CON NOSOTROS!
+                <br> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident ex repellat in facere, quod
+                hic quis rerum quam amet asperiores nisi nemo perferendis accusantium. Distinctio quo laborum velit
+                deserunt numquam. </p>
+        </div>
+        <div class="s2-img2">
+            <img src="/img/carDrift.png" loading="lazy" alt="BMW-M6-2">
+        </div>
+    </div>
+</section>
+<!-- ==========================================SECTION 2 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SESION 3 START=============================-->
+<section class="sesion3" id="servicio">
+    <div class="conS3">
+        <div class="s3-img1">
+            <img src="/img/llantasMonton.png" loading="lazy" alt="monton de llantas">
+        </div>
+        <div class="s3-text">
+            <h1>Servicios</h1>
+            <p><a href="">* Aplican términos y condiciones.Por favor antes de acceder a nuestros servicios lea
+                    cuidadosamente las clausulas del doumento</a></p>
+            <div>
+                <h3>Taller</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                    quia vel iste quo officia perferendis accusamus harum </p>
+            </div>
+            <div>
+                <h3>Accesorios</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                    quia vel iste quo officia perferendis accusamus harum </p>
+            </div>
+            <div>
+                <h3>Repuestos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                    quia vel iste quo officia perferendis accusamus harum </p>
+            </div>
+        </div>
+        <div class="s3-img2">
+            <img src="/img/llantaSombra.png" loading="lazy" alt="Llanta">
+            <img class="s3-img2-animacion" src="/img/llanta.png" loading="lazy" alt="sombra">
+        </div>
+    </div>
+</section>
+<!-- ==========================================SECTION 3 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SESION 4 START=============================-->
+
+<section class="sesion4" id="contacto">
+    <div class="s4-cont">
+        <h1 class="heading">Contáctenos</h1>
+        <div class="row">
+            <form action="" class="containerFormaulario">
+                <h3>get in touch</h3>
+                <input type="text" placeholder="Nombre" class="box">
+                <input type="email" placeholder="E-mail" class="box">
+                <input type="number" placeholder="Telefono" class="box">
+                <textarea placeholder="Escribe tu mensaje" class="box" cols="30" rows="10"></textarea>
+                <input type="submit" value="Enviar" class="btn btnIniciarSesion">
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ==========================================SECTION 4 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SESION 5 START=============================-->
+<section class="sesion5" id="mapaSitio">
+    <div class="conS5">
+        <div class="s5-img1">
+            <img src="/img/bmw-3.png" loading="lazy" alt=bmw-m6-front"">
+        </div>
+        <div class="s5-text">
+            <h1>Mapa<span>del Sitio</span></h1>
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2334364227613!2d-75.57588018575862!3d6.2329279954881605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44284b5701a58f%3A0xb31d13b03ef5d400!2sFord%20-%20El%20Roble%20Motor%20Palac%C3%A9!5e0!3m2!1sen!2sin!4v1636909737422!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="s5-img2">
+            <img src="/img/BMW-M6-2.png" loading="lazy" alt="BMW-M6-2">
+        </div>
+    </div>
+</section>
+<!-- ==========================================SECTION 5 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================FOOTER START=============================-->
+<footer class="containerFooter" id="">
+    <div class="containerlineaHeader">
+        <div class="lineaHeader"></div>
+    </div>
+    <nav class="containerLogoFooter ">
+        <a href=""><img class="logo logoFooter" src="/img/fordLogo.png" alt=""></a>
+    </nav>
+    <nav class="informacion">
+        <ul class="footerInformacion">
+            <li>
+                <h1>Nosotros</h1>
+            </li>
+            <li><a href="">Quienes Somos</a></li>
+            <li><a href="">Misión</a></li>
+            <li><a href="">Visión</a></li>
+            <li><a href="">Mapa del sitio</a></li>
+        </ul>
+    </nav>
+    <nav class="informacion">
+        <ul class="footerInformacion">
+            <li>
+                <h1>Personas</h1>
+            </li>
+            <li><a href="">Iniciar sesión</a></li>
+            <li><a href="">Registrarse</a></li>
+            <li><a href="">Perfil</a></li>
+            <li><a href="">Politicas y Condiciones</a></li>
+        </ul>
+    </nav>
+    <nav class="servicoCliente">
+        <ul class="footerInformacion">
+            <li>
+                <h1>Servicio al Cliente</h1>
+            </li>
+            <li><a href="">Contactar a un asesor</a></li>
+            <li><a href="">Contactenos</a></li>
+            <li><a href="">Catálogo de Servicio</a></li>
+            <li><a href="">Términos y Condiciones</a></li>
+        </ul>
+    </nav>
+    <nav class="informacion">
+        <ul class="footerInformacion">
+            <li>
+                <h1>Documentacion</h1>
+            </li>
+            <li><a href="">¿Por Que Este Documento?</a></li>
+            <li><a href="">Documentación Requerida</a></li>
+            <li><a href="">Clausulas</a></li>
+            <li><a href="">Tratamiento de datos</a></li>
+        </ul>
+    </nav>
+    <nav class="containerEmailInput">
+        <div class="containerInput">
+            <input class="input" type="text" placeholder="Email">
+            <button class="btnEnvirFooter btn ri-send-plane-line"> Suscribirse</button>
+        </div>
+    </nav>
+    <div class="final">
+        <div class="textoFinal">
+            <a href="">&#169; Grupo5. All right reserved.</a>
+            <a href="">Términos</a>
+            <a href="">Privacidad</a>
+            <a href="">Mapa del sitio</a>
+            <a href="">¿Quienes Somos?</a>
+        </div>
+        <div class="redesSociales">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+            <a href=""><i class="ri-instagram-fill"></i></a>
+            <a href=""><i class="ri-youtube-fill"></i></a>
+        </div>
+    </div>
+
+</footer>
+<!-- ==========================================FOOTER END=============================-->
+<!-- **********************************************************************************-->
+
+    <!--================================NECESARIO PARA CARRUSEL START===============================-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!--================================NECESARIO PARA CARRUSEL END===============================-->
+    <!--*****************************************************************************-->
+    <!-- ==============================================LIBRERIA PARALAX IMPORTADA DESDE SERVIDOR, 
+        IMPORTANTE PARA HACER PARALAX START===================================================-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+        <!-- ==============================================LIBRERIA PARALAX IMPORTADA DESDE SERVIDOR, 
+        IMPORTANTE PARA HACER PARALAX START===================================================-->
+    <!--*****************************************************************************-->
+        <!-- ==================================LIBRERIA DE SWIPE START=============================-->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- ==================================LIBRERIA DE SWIPE END=============================-->
+    <!--*****************************************************************************-->
+    <!--===============================OBJETO SCROLL PARA PANTALLA COMPLETS START=============================-->
+    <script >
+        /*====================DE HAMBURGEZA A X START===============*/
+        let menu = document.querySelector("#menu-btn");
+        let navbar = document.querySelector(".navbar");
+        /*====================DE HAMBURGEZA A X END===============*/
+        //*****************************************************************************
+        /*====================DAR CLIC EN LOGIN APARECER MENU MODAL START===============*/
+        menu.onclick = () => {
+            menu.classList.toggle("fa-times");
+            navbar.classList.toggle("active1")
+        }
+        document.querySelector('#login-btn').onclick = () =>{
+        document.querySelector('.containerLogin').classList.toggle('active');
+        }
+        document.querySelector('#close-login-form').onclick = () => {
+            document.querySelector('.containerLogin').classList.remove('active');
+        }
+        /*====================DAR CLIC EN LOGIN APARECER MENU MODAL END=============*/
+        //*****************************************************************************
+        /*=========================pantalla completa, cambiar el scroll objeto START======================*/
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop(),
+                dh = $(document).height(),
+                wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $('#barra-progreso').css('height', scrollPercent + '%');
+        })
+        /*=========================pantalla completa, cambiar el scroll objeto END======================*/
+        //*****************************************************************************
+        /*=========================CONF DE CARRUSEL SECION 0 START====================*/
+        $(document).ready(function(){
+            $('.carousel__lista').slick({
+                slidesToShow:1,
+                slidesToScroll:1,
+                autoplay:true,
+                autoplaySpeed:3000,
+                focusOnSelect:true,
+                arrows:false,
+                dots:false,
+                pauseOnHover:false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                        }
+                    },
+                    {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 1
+                        }
+                    },
+                ]
+            });
+        })
+        /*=========================CONF DE CARRUSEL SECION 0 END======================*/
+        //*****************************************************************************
+        /*=========================CONF DE CARRUSEL SECION 1 START====================*/
+        var swiper = new Swiper(".sesion1-slider", {
+            grabCursor: true,
+            centeredSlides: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 9500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+        /*=========================CONF DE CARRUSEL SECION 1 END======================*/
+        //*****************************************************************************
+         /* =============================CONF DE CARRUSEL PARALAX START================*/
+        
+         gsap.to("header", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 540
+        });
+         gsap.to(".imgPiso", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            scaleY: -.4,
+            translateY: -40
+        });
+        /*------------*/
+        gsap.to(".carousel__elemento", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 260,
+            scaleY:.8
+
+        });
+        /*------------*/
+        gsap.to(".lamp1", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 350,
+        });
+        /*------------*/
+        gsap.to(".lamp2", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 320,
+        });
+        /*------------*/
+        gsap.to(".lamp3", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 290,
+        });
+        /*------------*/
+        gsap.to(".lamp4", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 260,
+        });
+        /*------------*/
+        gsap.to(".lamp5", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 230,
+        });
+        /*------------*/
+        gsap.to(".lamp6", {
+            scrollTrigger: {
+                start: "top top",
+                end: "center top",
+                scrub: 0
+            },
+            translateY: 200,
+        });
+
+
+
+
+
+        gsap.to(".s2-img2 img", {
+            scrollTrigger: {
+                start: "top center",
+                scrub: 3
+            },
+            translateX: -300,
+        });
+
+     
+
+        gsap.to(".s3-img2-animacion", {
+            scrollTrigger: {
+                start: "center bottom",
+                end: "center top",
+                scrub: 3
+            },
+            rotate: 260,
+        });
+        gsap.to(".s3-img2 img", {
+            scrollTrigger: {
+                start: "center bottom",
+                end: "center top",
+                scrub: 3
+            },
+            translateX: 500
+        });
+        
+        /*=========================CONF DE CARRUSEL SECION 1 END======================*/
+        //*****************************************************************************
+        // =========================APARECER OBJETOS AL HACER SCROLL START==================
+        ScrollReveal().reveal('.s2-text', {
+            duration: 1500,
+            origin: 'bottom',
+            distance: '100px',
+            opacity: 1
+        
+        });
+        //=========================APARECER OBJETOS AL HACER SCROLL END==================
+    </script>
+</body>
+
+</html>

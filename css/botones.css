@@ -1,0 +1,57 @@
+.btn{
+    display: inline-block;
+    transition: .3s;
+    background: hsl(0, 100%, 50%);
+    color: white;
+}
+.btn:hover{
+ background-color: azure;
+ color: red;
+ transition: .5s ease-in-out;
+}
+.contenedorBotones {
+    margin-left: 100px;
+}
+
+.btnIniciarSesion {
+    font-size: 14px;
+    margin-right: 30px;
+    padding: 10px 50px;
+    border-radius: 2px;
+}
+.btnBuscarProductos{
+    font-size: 12px;
+    margin: 1px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    justify-content: center;
+}
+
+.btnRegistrarse {
+    font-size: 12px;
+    margin: 15px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 2px;
+    background: hsl(0, 0%, 70%);
+    color: rgb(255, 0, 0);
+}
+
+
+
+/*=====MEDIA QUERIES======*/
+
+@media (max-width: 991px){
+    .btnIniciarSesion {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .btnIniciarSesion{
+        display: none;
+    }
+}
+@media (max-width: 450px){
+   
+}

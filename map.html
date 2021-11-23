@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- =========================================FONT AWOSOME=======================-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+  <title> map</title>
+  <style media="screen">
+    html {
+      background: red;
+    }
+    section {
+      height: 100vh;
+    }
+    .s1,
+    .s2,
+    .s3 {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contCard {
+      /*div que tiene el contenido*/
+      position: absolute;
+      top: 25vh;
+      *background-color: rgb(226, 226, 226);
+      border-radius: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 700px;
+      height: 500px;
+      padding: 1.5rem;
+      *-webkit-animation: crunch 4s 1s ease-in-out infinite;
+      *animation: crunch 4s 1s ease-in-out infinite;
+      *transform: scaleX(1);
+    }  
+    .contFold {/* contiene la clase fold*/
+      position: relative;
+      display: flex;
+      width: 700px;
+      height: 500px;
+      transition: all .8s ease-in-out;
+    }
+    .fold { /* contiene las imagenes a ser afectadas*/
+      flex: 1;
+      background: url("/img/mapImg.jpg") no-repeat;
+      background-size: cover;
+      animation: 4s 1s ease-in-out infinite;
+    }
+    .fold:nth-child(1) {
+      background-position: 0%;
+    }
+    .fold:nth-child(2) {
+      background-position: 25%;
+    }
+    .fold:nth-child(3) {
+      background-position: 50%;
+    }
+    .fold:nth-child(4) {
+      background-position: 75%;
+    }
+    .fold:nth-child(5) {
+      background-position: 100%;
+    }
+    .fold:first-child {
+      border-radius: .5vw 0 0 .5vw;
+    }
+    .fold:last-child {
+      border-radius: 0 .5vw .5vw 0;
+    }
+    .fold:nth-child(odd) {
+      transform: skewY(44.5deg);
+      filter: brightness(.4);
+      
+    }
+    .fold:nth-child(even) {
+      transform: skewY(-44.5deg);
+      filter: brightness(1.3);
+     
+    }
+    .map {
+      position: absolute;
+      border-radius: .8rem;
+      width: 700px;
+      height: 500px;
+      top: 1.5rem;
+      z-index: 1;
+      opacity: 0;
+      transition: .5s ease-in-out;    
+    }
+    .aparecerMap{
+      *border: 3rem solid blue;
+      opacity: 1;
+      transition: .5s ease-in-out;
+    }
+    .iconoMap{
+      position: absolute;
+      *background-color: rgba(255, 0, 0, 0.37);
+      color: rgb(245, 57, 57);
+      height: 40px;
+      width:30px;
+      font-size: 3.2rem;
+      top: calc(50% - 34px);
+      *text-align: center;
+      z-index: 2;
+      animation: upDown 5s s ease-in-out infinite;
+    }
+    /*
+    @keyframes upDown {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-150px);
+      }
+      100% {
+        transform: translateY(0);
+      }*/
+  </style>
+</head>
+
+<body>
+
+  <section class="s1">
+    <h1 style="color:cornsilk; font-size: 15rem; ">section 1</h1>
+  </section>
+
+  <section class="s2" id="hero">
+    <div class="contCard">
+      <i class="fas fa-map-marker-alt iconoMap"></i>
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2334364227613!2d-75.57588018575862!3d6.2329279954881605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44284b5701a58f%3A0xb31d13b03ef5d400!2sFord%20-%20El%20Roble%20Motor%20Palac%C3%A9!5e0!3m2!1sen!2sin!4v1636909737422!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy"></iframe>
+      <div class="contFold">
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+        <div class="fold"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s3">
+    <h1 style="color:cornsilk; font-size: 15rem; ">section 3</h1>
+  </section>
+
+  <!-- LIBRERIA PARALAX IMPORTADA DESDE SERVIDOR, 
+        IMPORTANTE PARA HACER PARALAX=============================-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+  <script>
+    const tl = gsap.timeline({
+      scrollTrigger: {
+      trigger: "#hero",
+      start: "center bottom",
+      end: "center center",
+      scrub: 1      
+      }
+    });
+    tl.addLabel("start")
+      .from(".contCard ", {scale: .3, rotation:0, autoAlpha: 1,})
+      
+      gsap.to(".fold:nth-child(odd)", {
+            scrollTrigger: {
+              trigger: "#hero",
+              start: "center bottom",
+              end: "center center",
+              scrub: 1
+            },
+            filter:"brightness(1)",
+            skewY: -45,
+            scaleX:.71,
+            
+        });
+      
+      gsap.to(".fold:nth-child(even)", {
+            scrollTrigger: {
+              trigger: "#hero",
+              start: "center bottom",
+              end: "center center",
+              scrub: 1
+            },
+            skewY: 45,
+            scaleX:.71,
+            filter:"brightness(1)"
+        });
+        
+
+        function mapClass(){
+        const mapClass = document.querySelector(".map");
+        // When the scroll is higher than 90 viewport height, add the show-scroll class to the a tag with the scroll-top class
+        if(this.scrollY >= 718)mapClass.classList.add('aparecerMap'); 
+        else mapClass.classList.remove('aparecerMap')
+        } 
+        window.addEventListener('scroll', mapClass)
+        
+
+
+  </script>
+
+    
+ 
+</body>
+
+</html>
